@@ -1,4 +1,4 @@
-package com.capgemini.bus_booking;
+package com.capgemini.bus_booking.ui;
 
 import java.util.Map;
 import java.util.Scanner;
