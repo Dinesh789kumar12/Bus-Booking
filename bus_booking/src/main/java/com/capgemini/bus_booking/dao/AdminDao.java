@@ -1,9 +1,9 @@
 package com.capgemini.bus_booking.dao;
 
-import java.util.List;
+import java.util.Map;
 
 import com.capgemini.bus_booking.bean.Admin;
 
 public interface AdminDao {
-	public List<Admin> addAdmin();
+	public Map<String, Admin> addAdmin();
 }
