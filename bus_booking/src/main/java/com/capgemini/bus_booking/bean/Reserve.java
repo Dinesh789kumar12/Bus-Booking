@@ -41,6 +41,18 @@ public class Reserve {
 		this.fare = fare;
 	}
 
+	public Reserve(int id, int routeID, boolean ac, int fare, String departureTime, String arrivalTime,
+			int availablityCount) {
+		super();
+		this.id = id;
+		this.routeID = routeID;
+		this.ac = ac;
+		this.fare = fare;
+		this.departureTime = departureTime;
+		this.arrivalTime = arrivalTime;
+		this.availablityCount = availablityCount;
+	}
+
 	public String getDepartureTime() {
 		return departureTime;
 	}

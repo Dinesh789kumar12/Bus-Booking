@@ -11,7 +11,10 @@ public class RouteDaoImpl implements RouteDao {
 
 	@Override
 	public Map<String, Route> addRoute() {
-
+		hroute.put("Komal", new Route(11, "Delhi", "Jaipur"));
+		hroute.put("Jonny", new Route(22, "Mumbai", "Chennai"));
+		hroute.put("Irina", new Route(777, "UP", "Delhi"));
+		hroute.put("Vikas", new Route(444, "Himachal Pradesh", "Delhi"));
 		return hroute;
 	}
 
