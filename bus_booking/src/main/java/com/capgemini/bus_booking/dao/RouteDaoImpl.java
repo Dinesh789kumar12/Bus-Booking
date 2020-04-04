@@ -1,26 +1,18 @@
 package com.capgemini.bus_booking.dao;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.capgemini.bus_booking.bean.Route;
 
 public class RouteDaoImpl implements RouteDao {
 
-	ArrayList<Route> lroute = new ArrayList<Route>();
+	HashMap<String, Route> hroute = new HashMap<String, Route>();
 
 	@Override
-	public List<Route> addRoute() {
+	public Map<String, Route> addRoute() {
 
-		return null;
-	}
-
-	public ArrayList<Route> getLroute() {
-		return lroute;
-	}
-
-	public void setLroute(ArrayList<Route> lroute) {
-		this.lroute = lroute;
+		return hroute;
 	}
 
 }

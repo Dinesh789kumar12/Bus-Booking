@@ -1,9 +1,9 @@
 package com.capgemini.bus_booking.dao;
 
-import java.util.List;
+import java.util.Map;
 
 import com.capgemini.bus_booking.bean.Reserve;
 
 public interface ReserveDao {
-	public List<Reserve> addReserves();
+	public Map<String, Reserve> addReserve();
 }

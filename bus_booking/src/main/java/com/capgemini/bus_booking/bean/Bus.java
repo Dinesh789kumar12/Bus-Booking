@@ -33,6 +33,18 @@ public class Bus {
 		this.ac = ac;
 	}
 
+	public Bus(int id, int routeID, boolean ac, int fare, String departureTime, String arrivalTime,
+			int availablityCount) {
+		super();
+		this.id = id;
+		this.routeID = routeID;
+		this.ac = ac;
+		this.fare = fare;
+		this.departureTime = departureTime;
+		this.arrivalTime = arrivalTime;
+		this.availablityCount = availablityCount;
+	}
+
 	public int getFare() {
 		return fare;
 	}
