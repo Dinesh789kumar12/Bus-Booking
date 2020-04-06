@@ -10,20 +10,19 @@ public class BusServicesImpl implements BusServices {
 
 	@Override
 	public Map<String, Bus> searchBus(Route route, Date date) {
-		// TODO Auto-generated method stub
+       
 		return null;
 	}
 
 	@Override
 	public Map<String, Bus> sortingBus(String sort) {
-		// TODO Auto-generated method stub
+	
 		return null;
 	}
 
 	@Override
 	public Map<String, Bus> modifySearch(String from, String to, Date date) {
-		// TODO Auto-generated method stub
+	
 		return null;
 	}
-
 }

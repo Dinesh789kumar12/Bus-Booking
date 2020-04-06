@@ -15,8 +15,7 @@ public class AdminDaoImpl implements AdminDao {
 		hadmin.put("amit", new Admin(222, "Pushkar", "pushkar@gmail.com"));
 	}
 
-	public Map<String, Admin> addAdmin() {
-
+	public Map<String, Admin> add_Admin() {
 		return hadmin;
 	}
 
@@ -27,5 +26,4 @@ public class AdminDaoImpl implements AdminDao {
 	public void setHadmin(HashMap<String, Admin> hadmin) {
 		this.hadmin = hadmin;
 	}
-
 }

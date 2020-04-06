@@ -4,48 +4,63 @@ import java.util.Map;
 
 import com.capgemini.bus_booking.bean.Admin;
 import com.capgemini.bus_booking.bean.Customer;
+import com.capgemini.bus_booking.dao.AdminDaoImpl;
+import com.capgemini.bus_booking.dao.CustomerDaoImpl;
 
 public class UserServiceImpl implements UserServices {
 
 	@Override
 	public Map<String, Customer> forgotPassword() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 	@Override
 	public Map<String, Customer> addAdditionalData(String address, String phno) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 	@Override
 	public Map<String, Customer> changePassword() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 	@Override
-	public Map<String, Customer> loginCustomer() {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean loginCustomer(String userName, String password) {
+		boolean check = false;
+		for (Map.Entry me : new CustomerDaoImpl().getHcustomer().entrySet()) {
+			Customer j = (Customer) me.getValue();
+			if (me.getKey().equals(userName) && j.getCust_id() == Integer.parseInt(password)) {
+				System.out.println("Welcome to Login Page");
+				check = true;
+			}
+		}
+		return check;
 	}
 
 	@Override
 	public Map<String, Customer> signupCustomer() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
 	@Override
-	public Map<String, Admin> loginAdmin() {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean loginAdmin(String userName, String password) {
+		boolean check = false;
+		for (Map.Entry me : new AdminDaoImpl().getHadmin().entrySet()) {
+			Admin j = (Admin) me.getValue();
+			if (me.getKey().equals(userName) && j.getAdmin_id() == Integer.parseInt(password)) {
+				check = true;
+			}
+		}
+		return check;
 	}
 
 	@Override
 	public Map<String, Admin> signupAdmin() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 

@@ -11,6 +11,8 @@ import com.capgemini.bus_booking.dao.AdminDaoImpl;
 import com.capgemini.bus_booking.dao.CustomerDaoImpl;
 import com.capgemini.bus_booking.dao.EmployeeDaoImpl;
 import com.capgemini.bus_booking.dao.MangerDaoImpl;
+import com.capgemini.bus_booking.services.UserServiceImpl;
+import com.capgemini.bus_booking.services.UserServices;
 
 public class Login {
 	public static void main(String[] args) {
@@ -25,25 +27,26 @@ public class Login {
 			System.out.println("Enter UserName");
 			String userName = scr.next();
 			System.out.println("Enter Password");
-			int pass = scr.nextInt();
-			for (Map.Entry me : new AdminDaoImpl().getHadmin().entrySet()) {
-				Admin j = (Admin) me.getValue();
-				if (me.getKey().equals(userName) && j.getAdmin_id() == pass) {
-					System.out.println("Welcome to Login Page");
-				}
+			String password = scr.next();
+			boolean check = new UserServiceImpl().loginAdmin(userName, password);
+			if (check == true) {
+				System.out.println("Welcome to Login Page");
+			} else {
+				System.out.println("Invalid Creditional");
 			}
 			break;
 		case 2:
 			System.out.println("Enter UserName");
 			String custname = scr.next();
 			System.out.println("Enter Password");
-			int custpass = scr.nextInt();
-			for (Map.Entry me : new CustomerDaoImpl().getHcustomer().entrySet()) {
-				Customer j = (Customer) me.getValue();
-				if (me.getKey().equals(custname) && j.getCust_id() == custpass) {
-					System.out.println("Welcome to Login Page");
-				} 
+			String custpass = scr.next();
+			boolean checkCust = new UserServiceImpl().loginAdmin(custname, custpass);
+			if (checkCust == true) {
+				System.out.println("Welcome to Login Page");
+			} else {
+				System.out.println("Invalid Creditional");
 			}
+
 			break;
 		case 3:
 			System.out.println("Enter UserName");

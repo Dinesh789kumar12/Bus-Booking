@@ -13,11 +13,11 @@ public interface UserServices {
 
 	public Map<String, Customer> changePassword();
 
-	public Map<String, Customer> loginCustomer();
+	public boolean loginCustomer(String userName,String password);
 
 	public Map<String, Customer> signupCustomer();
 
-	public Map<String, Admin> loginAdmin();
+	public boolean loginAdmin(String userName,String password);
 
 	public Map<String, Admin> signupAdmin();
 
