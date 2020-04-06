@@ -26,13 +26,10 @@ public class Login {
 			String userName = scr.next();
 			System.out.println("Enter Password");
 			int pass = scr.nextInt();
-			for (Map.Entry me : new AdminDaoImpl().addAdmin().entrySet()) {
+			for (Map.Entry me : new AdminDaoImpl().getHadmin().entrySet()) {
 				Admin j = (Admin) me.getValue();
 				if (me.getKey().equals(userName) && j.getAdmin_id() == pass) {
 					System.out.println("Welcome to Login Page");
-					break;
-				} else {
-					System.out.println("Wrong Creditional");
 				}
 			}
 			break;
@@ -41,14 +38,11 @@ public class Login {
 			String custname = scr.next();
 			System.out.println("Enter Password");
 			int custpass = scr.nextInt();
-			for (Map.Entry me : new CustomerDaoImpl().addCustomer().entrySet()) {
+			for (Map.Entry me : new CustomerDaoImpl().getHcustomer().entrySet()) {
 				Customer j = (Customer) me.getValue();
 				if (me.getKey().equals(custname) && j.getCust_id() == custpass) {
 					System.out.println("Welcome to Login Page");
-					break;
-				} else {
-					System.out.println("Wrong Creditional");
-				}
+				} 
 			}
 			break;
 		case 3:
@@ -56,13 +50,11 @@ public class Login {
 			String empname = scr.next();
 			System.out.println("Enter Password");
 			int emppass = scr.nextInt();
-			for (Map.Entry me : new EmployeeDaoImpl().addEmployee().entrySet()) {
+			for (Map.Entry me : new EmployeeDaoImpl().getHemployee().entrySet()) {
 				Employee j = (Employee) me.getValue();
 				if (me.getKey().equals(empname) && j.getEmp_id() == emppass) {
 					System.out.println("Welcome to Login Page");
 					break;
-				} else {
-					System.out.println("Wrong Creditional");
 				}
 			}
 			break;
@@ -71,13 +63,11 @@ public class Login {
 			String mngrname = scr.next();
 			System.out.println("Enter Password");
 			int mgnrpass = scr.nextInt();
-			for (Map.Entry me : new MangerDaoImpl().addManger().entrySet()) {
+			for (Map.Entry me : new MangerDaoImpl().getHmanager().entrySet()) {
 				Manager j = (Manager) me.getValue();
 				if (me.getKey().equals(mngrname) && j.getMgr_id() == mgnrpass) {
 					System.out.println("Welcome to Login Page");
 					break;
-				} else {
-					System.out.println("Wrong Creditional");
 				}
 			}
 			break;

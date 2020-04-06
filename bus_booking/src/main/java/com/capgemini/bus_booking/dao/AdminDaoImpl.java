@@ -9,12 +9,23 @@ public class AdminDaoImpl implements AdminDao {
 
 	HashMap<String, Admin> hadmin = new HashMap<String, Admin>();
 
-	public Map<String, Admin> addAdmin() {
-
+	public AdminDaoImpl() {
+		super();
 		hadmin.put("karan", new Admin(111, "Ammu", "Jammu@gmail.com"));
 		hadmin.put("amit", new Admin(222, "Pushkar", "pushkar@gmail.com"));
+	}
+
+	public Map<String, Admin> addAdmin() {
 
 		return hadmin;
+	}
+
+	public HashMap<String, Admin> getHadmin() {
+		return hadmin;
+	}
+
+	public void setHadmin(HashMap<String, Admin> hadmin) {
+		this.hadmin = hadmin;
 	}
 
 }
