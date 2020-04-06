@@ -1,7 +1,7 @@
 package com.capgemini.bus_booking.services;
 
 import java.util.Date;
-import java.util.Map;
+import java.util.List;
 
 import com.capgemini.bus_booking.bean.Bus;
 import com.capgemini.bus_booking.bean.Route;
@@ -9,20 +9,22 @@ import com.capgemini.bus_booking.bean.Route;
 public class BusServicesImpl implements BusServices {
 
 	@Override
-	public Map<String, Bus> searchBus(Route route, Date date) {
-       
+	public List<Bus> searchBus(Route route, Date date) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Map<String, Bus> sortingBus(String sort) {
-	
+	public List<Bus> sortingBus(String sort) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Map<String, Bus> modifySearch(String from, String to, Date date) {
-	
+	public List<Bus> modifySearch(String from, String to, Date date) {
+		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 }

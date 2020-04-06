@@ -1,5 +1,6 @@
 package com.capgemini.bus_booking.services;
 
+import java.util.List;
 import java.util.Map;
 
 import com.capgemini.bus_booking.bean.Bus;
@@ -7,19 +8,19 @@ import com.capgemini.bus_booking.bean.Reserve;
 import com.capgemini.bus_booking.bean.Route;
 
 public interface AdminServices {
-	public Map<String, Bus> addBus();
+	public List<Bus> addBus();
 
-	public Map<String, Route> addRoute();
+	public List<Route> addRoute();
 
-	public Map<String, Bus> changeTiming();
+	public List<Bus> changeTiming();
 
-	public Map<String, Bus> cancelBus();
+	public List<Bus> cancelBus();
 
-	public Map<String, Route> cancelRoute();
+	public List<Route> cancelRoute();
 
-	public Map<String, Bus> updateBusTiming();
+	public List<Bus> updateBusTiming();
 
-	public Map<String, Route> updateRoute();
+	public List<Route> updateRoute();
 
-	public Map<String, Reserve> generateReport();
+	public List<Reserve> generateReport();
 }

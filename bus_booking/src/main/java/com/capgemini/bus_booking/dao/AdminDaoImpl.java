@@ -1,29 +1,36 @@
 package com.capgemini.bus_booking.dao;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.capgemini.bus_booking.bean.Admin;
 
 public class AdminDaoImpl implements AdminDao {
 
-	HashMap<String, Admin> hadmin = new HashMap<String, Admin>();
+	List<Admin> ladmin = new ArrayList<Admin>();
 
 	public AdminDaoImpl() {
 		super();
-		hadmin.put("karan", new Admin(111, "Ammu", "Jammu@gmail.com"));
-		hadmin.put("amit", new Admin(222, "Pushkar", "pushkar@gmail.com"));
+		ladmin.add(new Admin(111, "Ammu", "Jammu@gmail.com", "amu567@#"));
+		ladmin.add(new Admin(222, "Pushkar", "pushkar@gmail.com", "pushkar$%12"));
 	}
 
-	public Map<String, Admin> add_Admin() {
-		return hadmin;
+	public List<Admin> getLadmin() {
+		return ladmin;
 	}
 
-	public HashMap<String, Admin> getHadmin() {
-		return hadmin;
+	public void setLadmin(List<Admin> ladmin) {
+		this.ladmin = ladmin;
 	}
 
-	public void setHadmin(HashMap<String, Admin> hadmin) {
-		this.hadmin = hadmin;
+	@Override
+	public List<Admin> addAdminDao() {
+		return null;
+	}
+
+	@Override
+	public Admin findByUsername(String username) {
+		Admin admin = ladmin.stream().filter(x -> username.equals(x.getAdmin_name())).findAny().orElse(null);
+		return admin;
 	}
 }

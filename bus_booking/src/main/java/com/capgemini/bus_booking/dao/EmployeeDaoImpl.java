@@ -1,33 +1,32 @@
 package com.capgemini.bus_booking.dao;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.capgemini.bus_booking.bean.Employee;
 
 public class EmployeeDaoImpl implements EmployeeDao {
 
-	HashMap<String, Employee> hemployee = new HashMap<String, Employee>();
+	List<Employee> lemp = new ArrayList<Employee>();
 
 	public EmployeeDaoImpl() {
 		super();
-		hemployee.put("hitesh", new Employee(1, "Tina", "tina23@gmail.com", "03-02-1989", "Villaspur"));
-		hemployee.put("gaurav", new Employee(2, "Aparna", "aparna067@gmail.com", "09-06-1997", "Karanataka"));
-	}
-
-	public HashMap<String, Employee> getHemployee() {
-		return hemployee;
-	}
-
-	public void setHemployee(HashMap<String, Employee> hemployee) {
-		this.hemployee = hemployee;
+		lemp.add(new Employee(1, "Tina", "tina23@gmail.com", "03-02-1989", "Villaspur"));
+		lemp.add(new Employee(2, "Aparna", "aparna067@gmail.com", "09-06-1997", "Karanataka"));
 	}
 
 	@Override
-	public Map<String, Employee> addEmployee() {
+	public List<Employee> addEmployeeDao() {
 		// TODO Auto-generated method stub
+		return null;
+	}
 
-		return hemployee;
+	public List<Employee> getLemp() {
+		return lemp;
+	}
+
+	public void setLemp(List<Employee> lemp) {
+		this.lemp = lemp;
 	}
 
 }

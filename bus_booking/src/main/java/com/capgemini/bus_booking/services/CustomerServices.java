@@ -1,19 +1,19 @@
 package com.capgemini.bus_booking.services;
 
-import java.util.Map;
+import java.util.List;
 
 import com.capgemini.bus_booking.bean.Bus;
 import com.capgemini.bus_booking.bean.Reserve;
 
 public interface CustomerServices {
 
-	public Map<String, Reserve> cancelBooking();
+	public List<Reserve> cancelBooking();
 
-	public Map<String, Reserve> refundMoney(String cancel);
+	public List<Reserve> refundMoney(String cancel);
 
-	public Map<String, Bus> displayFare();
+	public List<Bus> displayFare();
 
-	public Map<String, Bus> seatAvailability();
+	public List<Bus> seatAvailability();
 
 	public void Rating();
 
@@ -21,5 +21,5 @@ public interface CustomerServices {
 
 	public void generateTicket();
 
-	public Map<String, Reserve> busBooking();
+	public List<Reserve> busBooking();
 }

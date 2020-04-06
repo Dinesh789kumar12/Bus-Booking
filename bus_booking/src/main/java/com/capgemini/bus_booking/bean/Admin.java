@@ -4,16 +4,26 @@ public class Admin {
 	private int admin_id;
 	private String admin_name;
 	private String admin_email;
+	private String admin_pass;
 
 	public int getAdmin_id() {
 		return admin_id;
 	}
 
-	public Admin(int admin_id, String admin_name, String admin_email) {
+	public Admin(int admin_id, String admin_name, String admin_email, String admin_pass) {
 		super();
 		this.admin_id = admin_id;
 		this.admin_name = admin_name;
 		this.admin_email = admin_email;
+		this.admin_pass = admin_pass;
+	}
+
+	public String getAdmin_pass() {
+		return admin_pass;
+	}
+
+	public void setAdmin_pass(String admin_pass) {
+		this.admin_pass = admin_pass;
 	}
 
 	public void setAdmin_id(int admin_id) {

@@ -1,5 +1,6 @@
 package com.capgemini.bus_booking.services;
 
+import java.util.List;
 import java.util.Map;
 
 import com.capgemini.bus_booking.bean.Bus;
@@ -8,25 +9,24 @@ import com.capgemini.bus_booking.bean.Reserve;
 public class CustomerServicesImpl implements CustomerServices {
 
 	@Override
-	public Map<String, Reserve> cancelBooking() {
+	public List<Reserve> cancelBooking() {
+		return null;
+	}
+
+	@Override
+	public List<Reserve> refundMoney(String cancel) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Map<String, Reserve> refundMoney(String cancel) {
+	public List<Bus> displayFare() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Map<String, Bus> displayFare() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Map<String, Bus> seatAvailability() {
+	public List<Bus> seatAvailability() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -50,7 +50,7 @@ public class CustomerServicesImpl implements CustomerServices {
 	}
 
 	@Override
-	public Map<String, Reserve> busBooking() {
+	public List<Reserve> busBooking() {
 		// TODO Auto-generated method stub
 		return null;
 	}

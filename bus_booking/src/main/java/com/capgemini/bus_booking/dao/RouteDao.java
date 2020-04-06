@@ -1,9 +1,9 @@
 package com.capgemini.bus_booking.dao;
 
-import java.util.Map;
+import java.util.List;
 
 import com.capgemini.bus_booking.bean.Route;
 
 public interface RouteDao {
-	public Map<String, Route> add_Route();
+	public List<Route> addRouteDao();
 }
