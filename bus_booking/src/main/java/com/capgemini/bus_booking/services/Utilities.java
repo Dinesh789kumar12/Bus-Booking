@@ -12,10 +12,8 @@ public class Utilities {
 			Matcher matcher = EMAIL_REGEX.matcher(email);
 			return matcher.find();
 		} else {
-
 			System.out.println("Field email have a null value in it.");
 			return false;
 		}
-
 	}
 }

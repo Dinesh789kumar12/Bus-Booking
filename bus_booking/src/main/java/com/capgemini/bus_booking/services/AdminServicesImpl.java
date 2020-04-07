@@ -6,6 +6,8 @@ import java.util.Map;
 import com.capgemini.bus_booking.bean.Bus;
 import com.capgemini.bus_booking.bean.Reserve;
 import com.capgemini.bus_booking.bean.Route;
+import com.capgemini.bus_booking.dao.BusDaoImpl;
+import com.capgemini.bus_booking.dao.RouteDaoImpl;
 
 public class AdminServicesImpl implements AdminServices {
 
@@ -27,15 +29,15 @@ public class AdminServicesImpl implements AdminServices {
 	}
 
 	@Override
-	public List<Bus> cancelBus() {
-		// TODO Auto-generated method stub
-		return null;
+	public void cancelBus(int busId) {
+		Bus res = new BusDaoImpl().findById(busId);
+		new BusDaoImpl().remove(busId);
 	}
 
 	@Override
-	public List<Route> cancelRoute() {
-		// TODO Auto-generated method stub
-		return null;
+	public void cancelRoute(int routeId) {
+	   Route rou = new RouteDaoImpl().findById(routeId);
+		new RouteDaoImpl().remove(routeId);
 	}
 
 	@Override

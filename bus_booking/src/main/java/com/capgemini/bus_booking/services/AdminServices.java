@@ -14,9 +14,9 @@ public interface AdminServices {
 
 	public List<Bus> changeTiming();
 
-	public List<Bus> cancelBus();
+	public void cancelBus(int busId);
 
-	public List<Route> cancelRoute();
+	public void cancelRoute(int routeId);
 
 	public List<Bus> updateBusTiming();
 

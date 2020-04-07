@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.capgemini.bus_booking.bean.Bus;
+import com.capgemini.bus_booking.bean.Customer;
 
 public class BusDaoImpl implements BusDao {
 
@@ -23,18 +24,24 @@ public class BusDaoImpl implements BusDao {
 	}
 
 	@Override
-	public List<Bus> addbusDao() {
-		// TODO Auto-generated method stub
-		return null;
+	public void addbusDao(List<Bus> lbus) {
+		this.lbus = lbus;
 	}
 
-	public List<Bus> getLbus() {
+	public List<Bus> getLbusList() {
 		return lbus;
 	}
 
-	public void setLbus(List<Bus> lbus) {
-		this.lbus = lbus;
+	@Override
+	public Bus findById(int id) {
+		Bus result = lbus.stream().filter(n -> n.getId() == id).findAny().orElse(null);
+		return result;
 	}
-	
+
+	@Override
+	public void remove(int id) {
+		lbus.remove(id);
+
+	}
 
 }

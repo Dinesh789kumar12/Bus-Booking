@@ -49,12 +49,12 @@ public class UserServiceImpl implements UserServices {
 
 	@Override
 	public void signupCustomer(List<Customer> lcst) {
-		new CustomerDaoImpl().setLcust(lcst);
+		new CustomerDaoImpl().addCustomerDao(lcst);
 	}
 
 	@Override
 	public void signupAdmin(List<Admin> ladmin) {
-		new AdminDaoImpl().setLadmin(ladmin);
+		new AdminDaoImpl().addAdminDao(ladmin);
 	}
 
 }

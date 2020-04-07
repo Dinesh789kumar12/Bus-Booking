@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.capgemini.bus_booking.bean.Bus;
 import com.capgemini.bus_booking.bean.Route;
 
 public class RouteDaoImpl implements RouteDao {
@@ -20,18 +21,21 @@ public class RouteDaoImpl implements RouteDao {
 		lroute.add(new Route(444, "Himachal Pradesh", "Delhi"));
 	}
 
-	public List<Route> getLroute() {
+	public List<Route> getrouteList() {
 		return lroute;
 	}
 
-	public void setLroute(List<Route> lroute) {
+	@Override
+	public void addRouteDao(List<Route> lroute) {
 		this.lroute = lroute;
 	}
 
-	@Override
-	public List<Route> addRouteDao() {
-		// TODO Auto-generated method stub
-		return null;
+	public Route findById(int routeId) {
+		Route result = lroute.stream().filter(n -> n.getId() == routeId).findAny().orElse(null);
+		return result;
 	}
 
+	public void remove(int routeId) {
+		lroute.remove(routeId);
+	}
 }

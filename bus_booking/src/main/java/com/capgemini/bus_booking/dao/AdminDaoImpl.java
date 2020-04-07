@@ -15,17 +15,13 @@ public class AdminDaoImpl implements AdminDao {
 		ladmin.add(new Admin(222, "Pushkar", "pushkar@gmail.com", "pushkar$%12"));
 	}
 
-	public List<Admin> getLadmin() {
+	public List<Admin> getadminList() {
 		return ladmin;
 	}
 
-	public void setLadmin(List<Admin> ladmin) {
-		this.ladmin = ladmin;
-	}
-
 	@Override
-	public List<Admin> addAdminDao() {
-		return null;
+	public void addAdminDao(List<Admin> ladmin) {
+		this.ladmin = ladmin;
 	}
 
 	@Override

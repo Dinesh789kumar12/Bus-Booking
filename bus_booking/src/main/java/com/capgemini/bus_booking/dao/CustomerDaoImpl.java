@@ -20,17 +20,12 @@ public class CustomerDaoImpl implements CustomerDao {
 	}
 
 	@Override
-	public void addCustomerDao(Customer cust) {
-
-	}
-
-	public List<Customer> getLcust() {
-		return lcust;
-	}
-
-	public void setLcust(List<Customer> lcust) {
+	public void addCustomerDao(List<Customer> lcust) {
 		this.lcust = lcust;
+	}
 
+	public List<Customer> getcustList() {
+		return lcust;
 	}
 
 	@Override
