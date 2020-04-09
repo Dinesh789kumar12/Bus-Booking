@@ -12,4 +12,6 @@ public interface RouteDao {
 	public Route findById(int routeId);
 
 	public void remove(int routeId);
+
+	public List<Route> findByOrigin(String origin);
 }

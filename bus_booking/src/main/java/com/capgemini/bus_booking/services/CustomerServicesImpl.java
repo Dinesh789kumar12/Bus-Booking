@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.capgemini.bus_booking.bean.Bus;
 import com.capgemini.bus_booking.bean.Reserve;
+import com.capgemini.bus_booking.dao.BusDaoImpl;
 
 public class CustomerServicesImpl implements CustomerServices {
 
@@ -20,9 +21,11 @@ public class CustomerServicesImpl implements CustomerServices {
 	}
 
 	@Override
-	public List<Bus> displayFare() {
-		// TODO Auto-generated method stub
-		return null;
+	public int displayFare(Reserve res) {
+		Bus bs = new BusDaoImpl().getLbusList().stream().filter(p -> p.getId() == res.getBusID()).findAny()
+				.orElse(null);
+		int price = bs.getFare() * res.getSeat();
+		return price;
 	}
 
 	@Override

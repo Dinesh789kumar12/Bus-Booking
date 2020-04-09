@@ -11,7 +11,7 @@ public interface CustomerServices {
 
 	public List<Reserve> refundMoney(String cancel);
 
-	public List<Bus> displayFare();
+	public int displayFare(Reserve res);
 
 	public List<Bus> seatAvailability();
 

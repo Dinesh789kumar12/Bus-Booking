@@ -2,12 +2,24 @@ package com.capgemini.bus_booking.bean;
 
 public class Reserve {
 	private int id;
-	private int routeID;
-	private boolean ac;
-	private int fare;
-	private String departureTime;
-	private String arrivalTime;
-	private int availablityCount;
+	private String custId;
+	private int busID;
+	private String dt;
+	private String tstamp;
+	private int seat;
+
+	public Reserve(int id, String custId, int busID, String dt, String tstamp, int seat) {
+		super();
+		this.id = id;
+		this.custId = custId;
+		this.busID = busID;
+		this.dt = dt;
+		this.tstamp = tstamp;
+		this.seat = seat;
+	}
+
+	public Reserve() {
+	}
 
 	public int getId() {
 		return id;
@@ -17,63 +29,51 @@ public class Reserve {
 		this.id = id;
 	}
 
-	public int getRouteID() {
-		return routeID;
+	public String getCustId() {
+		return custId;
 	}
 
-	public void setRouteID(int routeID) {
-		this.routeID = routeID;
+	public void setCustId(String custId) {
+		this.custId = custId;
 	}
 
-	public boolean isAc() {
-		return ac;
+	public int getBusID() {
+		return busID;
 	}
 
-	public void setAc(boolean ac) {
-		this.ac = ac;
+	public void setBusID(int busID) {
+		this.busID = busID;
 	}
 
-	public int getFare() {
-		return fare;
+	public String getDt() {
+		return dt;
 	}
 
-	public void setFare(int fare) {
-		this.fare = fare;
+	public void setDt(String dt) {
+		this.dt = dt;
 	}
 
-	public Reserve(int id, int routeID, boolean ac, int fare, String departureTime, String arrivalTime,
-			int availablityCount) {
-		super();
-		this.id = id;
-		this.routeID = routeID;
-		this.ac = ac;
-		this.fare = fare;
-		this.departureTime = departureTime;
-		this.arrivalTime = arrivalTime;
-		this.availablityCount = availablityCount;
+	public String getTstamp() {
+		return tstamp;
 	}
 
-	public String getDepartureTime() {
-		return departureTime;
+	public void setTstamp(String tstamp) {
+		this.tstamp = tstamp;
 	}
 
-	public void setDepartureTime(String departureTime) {
-		this.departureTime = departureTime;
+	public int getSeat() {
+		return seat;
 	}
 
-	public String getArrivalTime() {
-		return arrivalTime;
+	public void setSeat(int seat) {
+		this.seat = seat;
 	}
 
-	public void setArrivalTime(String arrivalTime) {
-		this.arrivalTime = arrivalTime;
+	@Override
+	public String toString() {
+		return "Reserve [id=" + id + ", custId=" + custId + ", busID=" + busID + ", dt=" + dt + ", tstamp=" + tstamp
+				+ ", seat=" + seat + "]";
 	}
+	
 
-	public int getAvailablityCount() {
-		return availablityCount;
-	}
-
-	public void setAvailablityCount(int availablityCount) {
-		this.availablityCount = availablityCount;
-	}
 }

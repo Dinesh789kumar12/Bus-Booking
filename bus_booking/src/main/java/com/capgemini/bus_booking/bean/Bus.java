@@ -33,7 +33,7 @@ public class Bus {
 		this.ac = ac;
 	}
 
-	public Bus(int id, int routeID, boolean ac, int fare, String departureTime, String arrivalTime,
+	public Bus(int id, int routeID, boolean ac, int fare, String arrivalTime, String departureTime,
 			int availablityCount) {
 		super();
 		this.id = id;
@@ -63,6 +63,12 @@ public class Bus {
 
 	public String getArrivalTime() {
 		return arrivalTime;
+	}
+
+	@Override
+	public String toString() {
+		return "Bus [id=" + id + ", routeID=" + routeID + ", ac=" + ac + ", fare=" + fare + ", departureTime="
+				+ departureTime + ", arrivalTime=" + arrivalTime + ", availablityCount=" + availablityCount + "]";
 	}
 
 	public void setArrivalTime(String arrivalTime) {
