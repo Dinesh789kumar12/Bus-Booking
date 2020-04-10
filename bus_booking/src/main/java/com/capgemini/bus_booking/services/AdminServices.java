@@ -1,7 +1,6 @@
 package com.capgemini.bus_booking.services;
 
 import java.util.List;
-import java.util.Map;
 
 import com.capgemini.bus_booking.bean.Bus;
 import com.capgemini.bus_booking.bean.Reserve;
@@ -23,4 +22,6 @@ public interface AdminServices {
 	public List<Route> updateRoute();
 
 	public List<Reserve> generateReport();
+
+	public List<Integer> checkSeatByBusDate(int bid, String date);
 }

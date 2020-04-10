@@ -1,7 +1,5 @@
 package com.capgemini.bus_booking.services;
 
-import java.util.List;
-
 import com.capgemini.bus_booking.bean.Admin;
 import com.capgemini.bus_booking.bean.Customer;
 import com.capgemini.bus_booking.dao.AdminDaoImpl;
@@ -30,31 +28,35 @@ public class UserServiceImpl implements UserServices {
 	}
 
 	@Override
-	public List<Customer> forgotPassword() {
-		// TODO Auto-generated method stub
-		return null;
+	public String forgotPassword(int cID) {
+		Customer cst = new CustomerDaoImpl().findById(cID);
+		String str = cst.getCust_pass();
+		return str;
 	}
 
 	@Override
-	public List<Customer> addAdditionalData(String address, String phno) {
-		// TODO Auto-generated method stub
-		return null;
+	public void addAdditionalData(String address, String phno, int custId) {
+		Customer cst = new CustomerDaoImpl().findById(custId);
+		cst.setCust_address(address);
+		cst.setCust_phno(phno);
 	}
 
 	@Override
-	public List<Customer> changePassword() {
-		// TODO Auto-generated method stub
-		return null;
+	public void changePassword() {
+
 	}
 
 	@Override
-	public void signupCustomer(List<Customer> lcst) {
-		new CustomerDaoImpl().addCustomerDao(lcst);
+	public void signupCustomer(int cust_id, String cust_name, String cust_dob, String cust_email, String cust_address,
+			String cust_phno, String cust_pass) {
+
+		Customer cst = new Customer(cust_id, cust_name, cust_dob, cust_email, cust_address, cust_phno, cust_pass);
+		new CustomerDaoImpl().addCustomerDao(cst);
 	}
 
 	@Override
-	public void signupAdmin(List<Admin> ladmin) {
-		new AdminDaoImpl().addAdminDao(ladmin);
+	public void signupAdmin(int admin_id, String admin_name, String admin_email, String admin_pass) {
+		Admin ad = new Admin(admin_id, admin_name, admin_email, admin_pass);
+		new AdminDaoImpl().addAdminDao(ad);
 	}
-
 }

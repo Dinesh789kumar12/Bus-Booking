@@ -20,8 +20,8 @@ public class AdminDaoImpl implements AdminDao {
 	}
 
 	@Override
-	public void addAdminDao(List<Admin> ladmin) {
-		this.ladmin = ladmin;
+	public void addAdminDao(Admin admin1) {
+		ladmin.add(admin1);
 	}
 
 	@Override

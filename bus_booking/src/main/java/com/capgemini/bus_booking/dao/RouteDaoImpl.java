@@ -17,12 +17,13 @@ public class RouteDaoImpl implements RouteDao {
 
 	public RouteDaoImpl() {
 		super();
-		// TODO Auto-generated constructor stub
 		lroute.add(new Route(11, "Delhi", "Jaipur"));
 		lroute.add(new Route(22, "Mumbai", "Chennai"));
 		lroute.add(new Route(777, "UP", "Delhi"));
 		lroute.add(new Route(444, "Himachal Pradesh", "Delhi"));
 		lroute.add(new Route(11, "Delhi", "Kolkatta"));
+		lroute.add(new Route(12, "Delhi", "Jaipur"));
+		lroute.add(new Route(15,"Delhi","Kolkatta"));
 	}
 
 	public List<Route> getrouteList() {
@@ -30,8 +31,8 @@ public class RouteDaoImpl implements RouteDao {
 	}
 
 	@Override
-	public void addRouteDao(List<Route> lroute) {
-		this.lroute = lroute;
+	public void addRouteDao(Route route) {
+	      lroute.add(route);
 	}
 
 	public Route findById(int routeId) {
@@ -60,7 +61,6 @@ public class RouteDaoImpl implements RouteDao {
 		for (Route row : routes) {
 			origins.add(row.getOrigin());
 		}
-
 		return origins;
 	}
 

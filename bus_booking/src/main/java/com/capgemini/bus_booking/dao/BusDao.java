@@ -3,6 +3,7 @@ package com.capgemini.bus_booking.dao;
 import java.util.List;
 
 import com.capgemini.bus_booking.bean.Bus;
+import com.capgemini.bus_booking.bean.Route;
 
 public interface BusDao {
 
@@ -13,4 +14,7 @@ public interface BusDao {
 	public Bus findById(int id);
 
 	public void remove(int id);
+
+	public  List<Bus> findByRouteAndDate(Route route, String date);
+
 }

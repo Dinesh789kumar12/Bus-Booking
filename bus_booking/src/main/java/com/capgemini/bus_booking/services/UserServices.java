@@ -1,25 +1,20 @@
 package com.capgemini.bus_booking.services;
 
-import java.util.List;
-import java.util.Map;
-
-import com.capgemini.bus_booking.bean.Admin;
-import com.capgemini.bus_booking.bean.Customer;
-
 public interface UserServices {
 
-	public List<Customer> forgotPassword();
+	public String forgotPassword(int cId);
 
-	public List<Customer> addAdditionalData(String address, String phno);
+	public void addAdditionalData(String address, String phno, int CustId);
 
-	public List<Customer> changePassword();
+	public void changePassword();
 
 	public boolean loginCustomer(String userName, String password);
 
-	public void signupCustomer(List<Customer> cst);
+	public void signupCustomer(int cust_id, String cust_name, String cust_dob, String cust_email, String cust_address,
+			String cust_phno, String cust_pass);
 
 	public boolean loginAdmin(String userName, String password);
 
-	public void signupAdmin(List<Admin> admin);
+	public void signupAdmin(int admin_id, String admin_name, String admin_emai, String admin_pass);
 
 }

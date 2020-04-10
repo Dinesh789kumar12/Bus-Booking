@@ -5,7 +5,7 @@ import java.util.List;
 import com.capgemini.bus_booking.bean.Customer;
 
 public interface CustomerDao {
-	public void addCustomerDao(List<Customer> lcust);
+	public void addCustomerDao(Customer lcust);
 
 	public List<Customer> getcustList();
 

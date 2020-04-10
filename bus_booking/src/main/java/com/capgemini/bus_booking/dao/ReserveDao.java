@@ -6,7 +6,7 @@ import java.util.List;
 import com.capgemini.bus_booking.bean.Reserve;
 
 public interface ReserveDao {
-	public void addReserveDao(ArrayList<Reserve> lreserve);
+	public void addReserveDao(Reserve lreserve);
 
 	public ArrayList<Reserve> getreserveList();
 
@@ -15,4 +15,6 @@ public interface ReserveDao {
 	public List<Integer> getSeatNumbersByBusAndDate(int busid, String date);
 
 	public int seatAvailabilityDao(int id,String date);
+	
+	public void deleteById(Reserve res);
 }

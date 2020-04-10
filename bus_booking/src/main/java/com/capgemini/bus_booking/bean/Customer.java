@@ -1,6 +1,13 @@
 package com.capgemini.bus_booking.bean;
 
 public class Customer {
+	@Override
+	public String toString() {
+		return "Customer [cust_id=" + cust_id + ", cust_name=" + cust_name + ", cust_dob=" + cust_dob + ", cust_email="
+				+ cust_email + ", cust_address=" + cust_address + ", cust_phno=" + cust_phno + ", cust_pass="
+				+ cust_pass + "]";
+	}
+
 	private int cust_id;
 	private String cust_name;
 	private String cust_dob;

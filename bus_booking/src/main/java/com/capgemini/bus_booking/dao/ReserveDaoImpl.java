@@ -13,16 +13,20 @@ public class ReserveDaoImpl implements ReserveDao {
 
 	public ReserveDaoImpl() {
 		super();
-		lreserve.add(new Reserve(1, "11", 4, "04-04-2020", "04-04-2020", 2));
+		// lreserve.add(new Reserve(id, custId, busID, dt, tstamp, seat))
+		lreserve.add(new Reserve(1, "11", 1, "04-04-2020", "04-04-2020", 2));
 		lreserve.add(new Reserve(2, "22", 8, "05-04-2020", "05-04-2020", 1));
 		lreserve.add(new Reserve(3, "22", 8, "08-04-2020", "08-04-2020", 5));
 		lreserve.add(new Reserve(4, "33", 3, "03-04-2020", "03-04-2020", 4));
 		lreserve.add(new Reserve(5, "44", 4, "04-04-2020", "04-04-2020", 5));
+		lreserve.add(new Reserve(6, "22", 9, "04-04-2020", "04-04-2020", 2));
+		lreserve.add(new Reserve(7, "55", 10, "05-04-2020", "05-04-2020", 7));
+		lreserve.add(new Reserve(8, "33", 21, "06-05-2020", "06-04-2020", 8));
 	}
 
 	@Override
-	public void addReserveDao(ArrayList<Reserve> lreserve) {
-		this.lreserve = lreserve;
+	public void addReserveDao(Reserve reserve) {
+		lreserve.add(reserve);
 	}
 
 	@Override
@@ -32,7 +36,7 @@ public class ReserveDaoImpl implements ReserveDao {
 
 	@Override
 	public Reserve findById(int id) {
-		Reserve res = lreserve.stream().filter(p -> p.getId() == id).findAny().orElse(null);
+		Reserve res = lreserve.stream().filter(p -> p.getId() == id).findAny().orElse(null);				
 		return res;
 	}
 
@@ -55,10 +59,14 @@ public class ReserveDaoImpl implements ReserveDao {
 		Bus totalSeat = new BusDaoImpl().getLbusList().stream().filter(p -> p.getId() == id).findAny().orElse(null);
 		return totalSeat.getAvailablityCount() - seatoccupied;
 	}
+	@Override
+	public void deleteById(Reserve res) {
+		   lreserve.remove(res);
+	}
 
 	public static void main(String[] args) {
 		ReserveDaoImpl daoImpl = new ReserveDaoImpl();
-		System.out.println(daoImpl.seatAvailabilityDao(4, "04-04-2020"));
+	    System.out.println(daoImpl.seatAvailabilityDao(4, "04-04-2020"));
 	}
 
 }
