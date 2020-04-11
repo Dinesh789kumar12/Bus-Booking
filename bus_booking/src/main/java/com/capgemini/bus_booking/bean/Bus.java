@@ -1,6 +1,11 @@
 package com.capgemini.bus_booking.bean;
 
-public class Bus {
+public class Bus implements Comparable {
+	public Bus() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	private int id;
 	private int routeID;
 	private boolean ac;
@@ -81,5 +86,15 @@ public class Bus {
 
 	public void setAvailablityCount(int availablityCount) {
 		this.availablityCount = availablityCount;
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		if (this.fare == ((Bus) o).fare)
+			return 0;
+		else if (this.fare > ((Bus) o).fare)
+			return 1;
+		else
+			return -1;
 	}
 }

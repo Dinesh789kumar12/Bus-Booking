@@ -52,6 +52,11 @@ public class Customer {
 		this.cust_dob = cust_dob;
 	}
 
+	public Customer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getCust_email() {
 		return cust_email;
 	}

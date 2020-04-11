@@ -3,11 +3,15 @@ package com.capgemini.bus_booking.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.capgemini.bus_booking.bean.Customer;
+import com.capgemini.bus_booking.exception.DaoException;
 
 public class CustomerDaoImpl implements CustomerDao {
 
 	List<Customer> lcust = new ArrayList<Customer>();
+	private static final Logger logger = Logger.getLogger(CustomerDaoImpl.class);
 
 	public CustomerDaoImpl() {
 		super();
@@ -15,12 +19,17 @@ public class CustomerDaoImpl implements CustomerDao {
 		lcust.add(new Customer(22, "Pushkar", "06-08-1998", "pushkar67@gmail.com", "Jaipur", "689089885", "push89"));
 		lcust.add(new Customer(33, "Raman", "02-03-1995", "raman34#2@gmail.com", "Srilanka", "8957754768", "raman678"));
 		lcust.add(new Customer(44, "Devender", "12-08-1996", "dk056@gmail.com", "Gorakpur", "786557878", "deven&*12"));
-		lcust.add(new Customer(55,"Reema", "04-05-1998", "reema@gmail.com", "Indore","89207714","reema@123"));
+		lcust.add(new Customer(55, "Reema", "04-05-1998", "reema@gmail.com", "Indore", "89207714", "reema@123"));
 	}
 
 	@Override
-	public void addCustomerDao(Customer cust) {
-		lcust.add(cust);
+	public void addCustomerDao(Customer cust) throws DaoException {
+		if (cust != null) {
+			lcust.add(cust);
+			logger.info("1 record added Customer");
+		} else {
+			throw new DaoException("Error in saving Record");
+		}
 	}
 
 	public List<Customer> getcustList() {
@@ -36,6 +45,9 @@ public class CustomerDaoImpl implements CustomerDao {
 	@Override
 	public Customer findByUsername(String username) {
 		Customer result = lcust.stream().filter(x -> username.equals(x.getCust_name())).findAny().orElse(null);
+		if (result == null) {
+			logger.error("Username is not available");
+		}
 		return result;
 	}
 }

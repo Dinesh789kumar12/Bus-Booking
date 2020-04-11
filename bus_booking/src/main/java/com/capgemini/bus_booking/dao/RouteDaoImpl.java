@@ -8,12 +8,15 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import org.apache.log4j.Logger;
+
 import com.capgemini.bus_booking.bean.Bus;
 import com.capgemini.bus_booking.bean.Route;
 
 public class RouteDaoImpl implements RouteDao {
 
 	List<Route> lroute = new ArrayList<Route>();
+	private static final Logger logger = Logger.getLogger(Route.class);
 
 	public RouteDaoImpl() {
 		super();
@@ -23,7 +26,7 @@ public class RouteDaoImpl implements RouteDao {
 		lroute.add(new Route(444, "Himachal Pradesh", "Delhi"));
 		lroute.add(new Route(11, "Delhi", "Kolkatta"));
 		lroute.add(new Route(12, "Delhi", "Jaipur"));
-		lroute.add(new Route(15,"Delhi","Kolkatta"));
+		lroute.add(new Route(15, "Delhi", "Kolkatta"));
 	}
 
 	public List<Route> getrouteList() {
@@ -32,7 +35,10 @@ public class RouteDaoImpl implements RouteDao {
 
 	@Override
 	public void addRouteDao(Route route) {
-	      lroute.add(route);
+		if (route != null)
+			lroute.add(route);
+		logger.info("1 Route added");
+
 	}
 
 	public Route findById(int routeId) {
@@ -67,10 +73,5 @@ public class RouteDaoImpl implements RouteDao {
 	private static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor) {
 		Map<Object, Boolean> seen = new ConcurrentHashMap<Object, Boolean>();
 		return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
-	}
-
-	public static void main(String[] args) {
-		RouteDaoImpl daoImpl = new RouteDaoImpl();
-		System.out.println(daoImpl.findByOrigin("Delhi"));
 	}
 }

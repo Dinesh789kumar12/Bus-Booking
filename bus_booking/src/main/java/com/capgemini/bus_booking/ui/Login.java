@@ -2,7 +2,8 @@ package com.capgemini.bus_booking.ui;
 
 import java.util.Scanner;
 
-import com.capgemini.bus_booking.services.UserServiceImpl;
+import com.capgemini.bus_booking.services.AdminServiceImpl;
+import com.capgemini.bus_booking.services.CustomerServiceImpl;
 
 public class Login {
 	public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class Login {
 			String userName = scr.next();
 			System.out.println("Enter Password");
 			String password = scr.next();
-			boolean check = new UserServiceImpl().loginAdmin(userName, password);
+			boolean check = new AdminServiceImpl().loginAdmin(userName, password);
 			if (check == true) {
 				System.out.println("Welcome to Login Page");
 			} else {
@@ -29,7 +30,7 @@ public class Login {
 			String custname = scr.next();
 			System.out.println("Enter Password");
 			String custpass = scr.next();
-			boolean checkCust = new UserServiceImpl().loginCustomer(custname, custpass);
+			boolean checkCust = new CustomerServiceImpl().loginCustomer(custname, custpass);
 			if (checkCust == true) {
 				System.out.println("Welcome to Login Page");
 			} else {

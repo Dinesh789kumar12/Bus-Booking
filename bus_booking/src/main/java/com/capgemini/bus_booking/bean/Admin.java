@@ -1,6 +1,17 @@
 package com.capgemini.bus_booking.bean;
 
 public class Admin {
+	public Admin() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "Admin [admin_id=" + admin_id + ", admin_name=" + admin_name + ", admin_email=" + admin_email
+				+ ", admin_pass=" + admin_pass + "]";
+	}
+
 	private int admin_id;
 	private String admin_name;
 	private String admin_email;

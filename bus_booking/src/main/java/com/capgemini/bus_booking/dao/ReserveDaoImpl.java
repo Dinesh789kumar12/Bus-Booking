@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.apache.log4j.Logger;
+
 import com.capgemini.bus_booking.bean.Bus;
 import com.capgemini.bus_booking.bean.Reserve;
+import com.capgemini.bus_booking.exception.DaoException;
 
 public class ReserveDaoImpl implements ReserveDao {
 
 	ArrayList<Reserve> lreserve = new ArrayList<Reserve>();
+	private static final Logger logger = Logger.getLogger(ReserveDaoImpl.class);
 
 	public ReserveDaoImpl() {
 		super();
@@ -25,8 +29,14 @@ public class ReserveDaoImpl implements ReserveDao {
 	}
 
 	@Override
-	public void addReserveDao(Reserve reserve) {
-		lreserve.add(reserve);
+	public void addReserveDao(Reserve reserve) throws DaoException {
+		if (reserve != null) {
+			lreserve.add(reserve);
+			logger.info("Passenger reserve record has been added!!!");
+		} else {
+			throw new DaoException("Error in reserve record of passenger");
+		}
+
 	}
 
 	@Override
@@ -36,7 +46,7 @@ public class ReserveDaoImpl implements ReserveDao {
 
 	@Override
 	public Reserve findById(int id) {
-		Reserve res = lreserve.stream().filter(p -> p.getId() == id).findAny().orElse(null);				
+		Reserve res = lreserve.stream().filter(p -> p.getId() == id).findAny().orElse(null);
 		return res;
 	}
 
@@ -59,14 +69,18 @@ public class ReserveDaoImpl implements ReserveDao {
 		Bus totalSeat = new BusDaoImpl().getLbusList().stream().filter(p -> p.getId() == id).findAny().orElse(null);
 		return totalSeat.getAvailablityCount() - seatoccupied;
 	}
+
 	@Override
 	public void deleteById(Reserve res) {
-		   lreserve.remove(res);
+		if (res != null) {
+			lreserve.remove(res);
+			logger.info("1 Reserve record has been deleted");
+		}
 	}
 
 	public static void main(String[] args) {
 		ReserveDaoImpl daoImpl = new ReserveDaoImpl();
-	    System.out.println(daoImpl.seatAvailabilityDao(4, "04-04-2020"));
+		System.out.println(daoImpl.seatAvailabilityDao(4, "04-04-2020"));
 	}
 
 }
