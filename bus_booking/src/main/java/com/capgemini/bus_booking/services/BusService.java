@@ -18,5 +18,5 @@ public interface BusService {
 
 	public void cancelBus(int busId);
 
-	public List<Bus> updateBusTiming();
+	public void updateBusTiming(int bid,String At,String Dt);
 }

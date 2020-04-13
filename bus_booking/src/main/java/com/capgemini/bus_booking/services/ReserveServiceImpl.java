@@ -44,4 +44,9 @@ public class ReserveServiceImpl implements ReserveService {
 		return leftSeat;
 	}
 
+	@Override
+	public List<Reserve> generateReport() {
+		List<Reserve> res = rsdaoimpl.getreserveList();
+		return res;
+	}
 }

@@ -13,4 +13,6 @@ public interface ReserveService {
 	public boolean busBooking(Reserve reserve) throws DaoException;
 
 	public List<Integer> checkSeatByBusDate(int bid, String date);
+
+	public List<Reserve> generateReport();
 }

@@ -77,10 +77,4 @@ public class ReserveDaoImpl implements ReserveDao {
 			logger.info("1 Reserve record has been deleted");
 		}
 	}
-
-	public static void main(String[] args) {
-		ReserveDaoImpl daoImpl = new ReserveDaoImpl();
-		System.out.println(daoImpl.seatAvailabilityDao(4, "04-04-2020"));
-	}
-
 }

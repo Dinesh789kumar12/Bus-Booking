@@ -11,7 +11,9 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public void refundMoney(String cancel) {
-
+		System.out.println("Payment can be done via:");
+		System.out.println("Credit Card / Debit Card/ Google pay/Paytm/Cash");
+		System.out.println("Ur money will be refunded soon");
 	}
 
 	@Override

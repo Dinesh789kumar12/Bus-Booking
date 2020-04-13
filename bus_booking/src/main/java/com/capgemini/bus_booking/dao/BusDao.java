@@ -13,8 +13,8 @@ public interface BusDao {
 
 	public Bus findById(int id);
 
-	public void remove(int id);
+	public void delete(int id);
 
-	public  List<Bus> findByRouteAndDate(Route route, String date);
+	public List<Bus> findByRouteAndDate(Route route, String date);
 
 }

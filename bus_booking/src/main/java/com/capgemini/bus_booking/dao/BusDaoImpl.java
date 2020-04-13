@@ -41,7 +41,7 @@ public class BusDaoImpl implements BusDao {
 	}
 
 	@Override
-	public void remove(int id) {
+	public void delete(int id) {
 		lbus.remove(id);
 	}
 
@@ -63,9 +63,4 @@ public class BusDaoImpl implements BusDao {
 		return rs;
 	}
 
-	public static void main(String[] args) {
-		BusDaoImpl busDaoImpl = new BusDaoImpl();
-
-		System.out.println(busDaoImpl.findByRouteAndDate(new Route(1, "Mumbai", "Chennai"), "06-05-2020"));
-	}
 }
