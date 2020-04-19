@@ -36,7 +36,6 @@ public class ReserveDaoImpl implements ReserveDao {
 		} else {
 			throw new DaoException("Error in reserve record of passenger");
 		}
-
 	}
 
 	@Override

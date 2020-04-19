@@ -16,7 +16,7 @@ public interface BusService {
 	public boolean addBus(int id, int routeID, boolean ac, int fare, String departureTime, String arrivalTime,
 			int availablityCount);
 
-	public void cancelBus(int busId);
+	public boolean cancelBus(int busId);
 
-	public void updateBusTiming(int bid,String At,String Dt);
+	public boolean updateBusTiming(int bid,String At,String Dt);
 }

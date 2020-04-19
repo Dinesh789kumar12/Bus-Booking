@@ -1,4 +1,13 @@
-[main] INFO  com.capgemini.bus_booking.dao.AdminDaoImpl  - 1 record are added in admin
-[main] INFO  com.capgemini.bus_booking.dao.AdminDaoImpl  - 1 record are added in admin
-[main] INFO  com.capgemini.bus_booking.dao.AdminDaoImpl  - 1 record are added in admin
-[main] INFO  com.capgemini.bus_booking.dao.AdminDaoImpl  - 1 record are added in admin
+[main] INFO  com.capgemini.bus_booking.dao.CustomerDaoImpl  - 1 record added Customer
+[main] INFO  com.capgemini.bus_booking.dao.CustomerDaoImpl  - 1 record added Customer
+[main] INFO  com.capgemini.bus_booking.bean.Route  - 1 Route added
+[main] INFO  com.capgemini.bus_booking.dao.CustomerDaoImpl  - 1 record added Customer
+2020-04-19 12:35:37 INFO  com.capgemini.bus_booking.dao.CustomerDaoImpl  - 1 record added Customer
+2020-04-19 12:39:52 INFO  com.capgemini.bus_booking.bean.Route  - 1 Route added
+2020-04-19 12:43:55 INFO  com.capgemini.bus_booking.dao.CustomerDaoImpl  - 1 record added Customer
+2020-04-19 12:57:06 INFO  com.capgemini.bus_booking.dao.CustomerDaoImpl  - 1 record added Customer
+2020-04-19 13:10:55 INFO  com.capgemini.bus_booking.dao.CustomerDaoImpl  - 1 record added Customer
+2020-04-19 13:14:22 INFO  com.capgemini.bus_booking.dao.CustomerDaoImpl  - 1 record added Customer
+2020-04-19 13:15:23 INFO  com.capgemini.bus_booking.dao.CustomerDaoImpl  - 1 record added Customer
+2020-04-19 13:17:49 INFO  com.capgemini.bus_booking.dao.CustomerDaoImpl  - 1 record added Customer
+2020-04-19 13:18:17 INFO  com.capgemini.bus_booking.dao.CustomerDaoImpl  - 1 record added Customer

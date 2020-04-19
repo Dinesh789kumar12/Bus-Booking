@@ -12,7 +12,7 @@ public interface CustomerService {
 
 	public void addAdditionalData(String address, String phno, int CustId);
 
-	public void changePassword(int id, String pass);
+	public boolean changePassword(int id, String pass);
 
 	public boolean loginCustomer(String userName, String password);
 

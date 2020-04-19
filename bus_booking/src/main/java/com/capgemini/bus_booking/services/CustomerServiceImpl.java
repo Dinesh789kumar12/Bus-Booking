@@ -52,9 +52,10 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public void changePassword(int id, String pass) {
+	public boolean changePassword(int id, String pass) {
 		Customer cst = cstdao.findById(id);
 		cst.setCust_pass(pass);
+		return true;
 	}
 
 	@Override

@@ -38,15 +38,17 @@ public class BusServiceImpl implements BusService {
 	}
 
 	@Override
-	public void cancelBus(int busId) {
+	public boolean cancelBus(int busId) {
 		Bus res = bsdaoimpl.findById(busId);
 		bsdaoimpl.delete(busId);
+		return true;
 	}
 
 	@Override
-	public void updateBusTiming(int bid, String At, String Dt) {
+	public boolean updateBusTiming(int bid, String At, String Dt) {
 		Bus bs = bsdaoimpl.findById(bid);
 		bs.setArrivalTime(At);
 		bs.setDepartureTime(Dt);
+		return true;
 	}
 }

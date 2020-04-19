@@ -3,51 +3,42 @@ package com.capgemini.bus_booking.services;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.capgemini.bus_booking.exception.Contact;
+import com.capgemini.bus_booking.exception.Email;
+import com.capgemini.bus_booking.exception.NameException;
+import com.capgemini.bus_booking.exception.Password;
+
 public class Utilities {
 
-	public static boolean emailValidator(String email) {
-		if (email != "" && email != null) {
-			final Pattern EMAIL_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",
-					Pattern.CASE_INSENSITIVE);
-			Matcher matcher = EMAIL_REGEX.matcher(email);
-			return matcher.find();
-		} else {
-			System.out.println("Field email have a null value in it.");
-			return false;
+	public static void emailValidator(String email) throws Email {
+		final Pattern EMAIL_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",
+				Pattern.CASE_INSENSITIVE);
+		Matcher matcher = EMAIL_REGEX.matcher(email);
+		if (!matcher.find()) {
+			throw new Email("Email is not correct form");
 		}
 	}
 
-	public static boolean nameValidator(String name) {
-		if (name != "" && name != null) {
-			Pattern p = Pattern.compile("[A-Z]{1}[a-z]{2,10}");
-			Matcher m = p.matcher(name);
-			return m.find();
-
-		} else {
-			System.out.println("Enter ur  name");
-			return false;
+	public static void nameValidator(String name) throws NameException {
+		Pattern p = Pattern.compile("[A-Z]{1}[a-z]{2,10}");
+		Matcher m = p.matcher(name);
+		if (!m.find()) {
+			throw new NameException("Name is not correct form");
 		}
 	}
 
-	public static boolean contactValidator(String contact_no) {
-		if (contact_no != "" && contact_no != null) {
-			Pattern p = Pattern.compile("[7-9]{1}[0-9]{9}");
-			Matcher m = p.matcher(contact_no);
-			return m.find();
-		} else {
-			System.out.println("Contact no is mandatory");
-			return false;
-		}
+	public static void contactValidator(String contact_no) throws Contact {
+		String pattern = "\\d{10}";
+		if (!contact_no.matches(pattern))
+			throw new Contact("Contact no is 10 digit only allowed");
 	}
 
-	public static boolean passwordValidator(String password) {
-		if (password != "" && password != null) {
-			Pattern p = Pattern.compile("[A-Za-z0-9@#$%]{6,16}");
-			Matcher m = p.matcher(password);
-			return m.find();
-		} else {
-			System.out.println("Enter a strong password");
-			return false;
+	public static void passwordValidator(String password) throws Password {
+		final String PASSWORD_PATTERN = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})";
+		Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+		Matcher matcher = pattern.matcher(password);
+		if (!matcher.matches()) {
+			throw new Password("Password should contain one uppercase letter ,lowercase,digit and special symbol");
 		}
 	}
 }

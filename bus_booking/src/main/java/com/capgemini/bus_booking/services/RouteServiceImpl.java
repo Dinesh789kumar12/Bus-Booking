@@ -17,10 +17,13 @@ public class RouteServiceImpl implements RouteService {
 	}
 
 	@Override
-	public void cancelRoute(int routeId) {
+	public boolean cancelRoute(int routeId) {
+		boolean check=false;
 		if (rdaoimpl.findById(routeId) != null) {
 			rdaoimpl.remove(routeId);
+			check=true;
 		}
+		return check;
 	}
 
 	@Override
